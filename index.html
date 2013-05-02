@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en-gb">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="description" content="Facebook enabled test webapp">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0, minimum-scale=1.0, height=device-height, target-densitydpi=medium-dpi" />
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" >
+    <!-- webapp capable mode so when we add to homescreen we get a chromeless webview -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <title>Webapp Test</title>
+
+</head>
+
+<body>
+    <div id="fb-root"></div>
+
+    <input type="button" onclick="dologin()" value="login">Login</input>
+
+
+    <script>
+
+        /**
+         * On login we just alert the access token
+         */
+        var doLogin = function() {
+            FB.login(function(response) {
+                alert(response.token);
+            }, {scope: permissions.join(",")});
+        }
+
+        window.fbAsyncInit = function() {
+            // init the FB JS SDK
+            FB.init({
+                appId      : 448600821889649, // App ID from the App Dashboard
+                channelUrl : '//' + window.location.hostname + '/channel.html', // Channel File for x-domain communication
+                status     : true, // check the login status upon init?
+                cookie     : false, // set sessions cookies to allow your server to access the session?
+                xfbml      : false,  // parse XFBML tags on this page?
+                frictionlessRequests: true,
+                oauth: true
+            });
+
+        };
+
+        // Load the SDK's source Asynchronously
+        // Note that the debug version is being actively developed and might
+        // contain some type checks that are overly strict.
+        // Please report such bugs using the bugs tool.
+        (function(d, s, id, debug){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/all" + (debug ? "/debug" : "") + ".js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk', /*debug*/ true));
+
+
+    </script>
+
+</body>
+
+</html>
