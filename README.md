@@ -3,7 +3,9 @@ facebook-webapp
 
 This is a demo of how the Facebook JS SDK is broken when you have added the meta tag
 
+```html
 <meta name="apple-mobile-web-app-capable" content="yes" />
+```
 
 and you use the iOS add to homescreen option.
 
