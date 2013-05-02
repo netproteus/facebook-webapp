@@ -15,3 +15,6 @@ This means you can't open popup windows and the FB SDK fails to return to your w
 
 
 You can see this running at http://webapp.netproteus.com
+
+All this app should do when you click on login is request Facebook login with a few permissions and then throw up an alert dialogue with the resulting access token.
+
