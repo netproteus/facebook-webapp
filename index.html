@@ -29,7 +29,7 @@
          */
         var doLogin = function() {
             FB.login(function(response) {
-                alert(response.token);
+                alert(response && response.authResponse && response.authResponse.accessToken);
             }, {scope: permissions.join(",")});
         }
 
