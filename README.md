@@ -12,3 +12,6 @@ and you use the iOS add to homescreen option.
 This places your webapp on their homescreen in chromeless mode.
 
 This means you can't open popup windows and the FB SDK fails to return to your webapp on login.
+
+
+You can see this running at http://webapp.netproteus.com
